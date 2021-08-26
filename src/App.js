@@ -4,6 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 
+
 export class App extends Component {
   name = "Durgesh";
   render() {
