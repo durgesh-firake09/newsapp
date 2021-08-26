@@ -1,16 +1,28 @@
-
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import News from "./components/News";
 
 export class App extends Component {
   name = "Durgesh";
   render() {
     return (
-      <div>
-        <h1>First Class Based Component {this.name}</h1>
-      </div>
-    )
+      <>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <News />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+          </Switch>
+        </Router>
+      </>
+    );
   }
 }
 
-export default App
-
+export default App;
