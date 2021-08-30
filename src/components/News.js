@@ -37,19 +37,6 @@ export class News extends Component {
         : "Top News - Get Daily Top News for FREE!!";
   }
 
-  // async updateNews() {
-  //   const url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=47a860f74f4b455f83529753d349f0bb&page=${this.state.page}&pagesize=${this.props.pagesize}`;
-  //   this.setState({ loading: true });
-  //   let data = await fetch(url);
-  //   let parsedData = await data.json();
-  //   console.log(parsedData);
-  //   this.setState({
-  //     articles: parsedData.articles,
-  //     totalResults: parsedData.totalResults,
-  //     loading: false,
-  //   });
-  // }
-
   async componentDidMount() {
     this.props.setProgress(0);
     this.props.setProgress(1);
@@ -72,52 +59,6 @@ export class News extends Component {
     this.props.setProgress(100);
     // this.updateNews();
   }
-
-  // handlePrevClick = async () => {
-  //   let url = `https://newsapi.org/v2/top-headlines?country=in&category=${
-  //     this.props.category
-  //   }&apiKey=47a860f74f4b455f83529753d349f0bb&page=${
-  //     this.state.page - 1
-  //   }&pagesize=${this.props.pagesize}`;
-  //   this.setState({ loading: true });
-
-  //   let data = await fetch(url);
-  //   let parsedData = await data.json();
-  //   console.log(parsedData);
-  //   this.setState({
-  //     page: this.state.page - 1,
-  //     articles: parsedData.articles,
-  //     loading: false,
-  //   });
-  // this.setState({ page: this.state.page - 1 });
-  // this.updateNews();
-  // };
-
-  // handleNextClick = async () => {
-  //   if (
-  //     !(
-  //       this.state.page + 1 >
-  //       Math.ceil(this.state.totalResults / Number(this.props.pagesize))
-  //     )
-  //   ) {
-  //     let url = `https://newsapi.org/v2/top-headlines?country=in&category=${
-  //       this.props.category
-  //     }&apiKey=47a860f74f4b455f83529753d349f0bb&page=${
-  //       this.state.page + 1
-  //     }&pagesize=${this.props.pagesize}`;
-  //     this.setState({ loading: true });
-  //     let data = await fetch(url);
-  //     let parsedData = await data.json();
-  //     console.log(parsedData);
-  //     this.setState({
-  //       page: this.state.page + 1,
-  //       articles: parsedData.articles,
-  //       loading: false,
-  //     });
-  //     // this.setState({ page: this.state.page + 1 });
-  //     // this.updateNews();
-  //   }
-  // };
 
   fetchMore = async () => {
     this.setState({ page: this.state.page + 1 });
@@ -174,34 +115,6 @@ export class News extends Component {
               </div>
             </div>
           </InfiniteScroll>
-          {/* {!this.state.loading && (
-            <>
-              <hr />
-
-              <div className="container d-flex justify-content-evenly mt-3">
-                <button
-                  disabled={this.state.page <= 1}
-                  className="btn btn-primary"
-                  onClick={this.handlePrevClick}
-                >
-                  &larr; Previous
-                </button>
-                <button
-                  disabled={
-                    this.state.page + 1 >
-                    Math.ceil(
-                      this.state.totalResults / Number(this.props.pagesize)
-                    )
-                  }
-                  className="btn btn-primary"
-                  id="nextBtn"
-                  onClick={this.handleNextClick}
-                >
-                  Next &rarr;
-                </button>
-              </div>
-            </>
-          )} */}
         </div>
         <hr />
         <div className="container">
