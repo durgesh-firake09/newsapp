@@ -8,12 +8,19 @@ export class NewsItem extends Component {
     return (
       <>
         <div className="card my-2" style={{ width: "18rem" }}>
-          <span
-            className="position-absolute translate-middle badge rounded-pill bg-danger"
-            style={{ left: "76px", top: "12px" }}
-          >
-            {author ? author : "Unknown"}
-          </span>
+          <div>
+            <span
+              className="badge rounded-pill bg-danger"
+              style={{
+                display: "flex",
+                position: "absolute",
+                right: "6px",
+                top: "6px",
+              }}
+            >
+              {author ? author : "Unknown"}
+            </span>
+          </div>
           <img
             src={imgUrl ? imgUrl : defImg}
             className="card-img-top"

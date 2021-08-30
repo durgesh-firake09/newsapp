@@ -2,19 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 export class Navbar extends Component {
-  searchDOM = () => {
-    let query = document.getElementById("query");
-    let allText = document.getElementById("newsContainer");
-    console.log(query.value);
-    console.log(String(allText.innerText).includes(query));
-    console.log(typeof allText)
-  };
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/home">
               Navbar
             </Link>
             <button
@@ -31,7 +24,11 @@ export class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li>
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/top-headlines/"
+                  >
                     Home
                   </Link>
                 </li>
@@ -43,7 +40,7 @@ export class Navbar extends Component {
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link dropdown-toggle"
-                    to="/"
+                    to="/top-headlines/"
                     id="navbarDropdown"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -59,7 +56,7 @@ export class Navbar extends Component {
                       <Link
                         className="dropdown-item"
                         aria-current="page"
-                        to="/entertainment"
+                        to="/top-headlines/entertainment"
                       >
                         Entertainment
                       </Link>
@@ -68,7 +65,7 @@ export class Navbar extends Component {
                       <Link
                         className="dropdown-item"
                         aria-current="page"
-                        to="/business"
+                        to="/top-headlines/business"
                       >
                         Business
                       </Link>
@@ -77,7 +74,7 @@ export class Navbar extends Component {
                       <Link
                         className="dropdown-item"
                         aria-current="page"
-                        to="/general"
+                        to="/top-headlines/general"
                       >
                         General
                       </Link>
@@ -86,7 +83,7 @@ export class Navbar extends Component {
                       <Link
                         className="dropdown-item"
                         aria-current="page"
-                        to="/health"
+                        to="/top-headlines/health"
                       >
                         Health
                       </Link>
@@ -95,7 +92,7 @@ export class Navbar extends Component {
                       <Link
                         className="dropdown-item"
                         aria-current="page"
-                        to="/science"
+                        to="/top-headlines/science"
                       >
                         Science
                       </Link>
@@ -104,7 +101,7 @@ export class Navbar extends Component {
                       <Link
                         className="dropdown-item"
                         aria-current="page"
-                        to="/sports"
+                        to="/top-headlines/sports"
                       >
                         Sports
                       </Link>
@@ -113,7 +110,7 @@ export class Navbar extends Component {
                       <Link
                         className="dropdown-item"
                         aria-current="page"
-                        to="/technology"
+                        to="/top-headlines/technology"
                       >
                         Technology
                       </Link>
@@ -121,7 +118,7 @@ export class Navbar extends Component {
                   </ul>
                 </li>
               </ul>
-              <form
+              {/* <form
                 className="d-flex"
                 style={{ position: "absolute", right: "17px" }}
               >
@@ -139,7 +136,7 @@ export class Navbar extends Component {
                 >
                   Search
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
         </nav>
